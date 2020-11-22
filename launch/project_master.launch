@@ -1,0 +1,24 @@
+<launch>
+    <arg name="v_max" default="0.2"/>
+    <arg name="om_max" default="0.4"/>
+    <arg name="v_des" default="0.15"/>
+    <arg name="resolution" default="0.1"/>
+
+    <include file="$(find asl_turtlebot)/launch/project_sim.launch" />  
+    <node pkg="asl_turtlebot" type="navigator.py" name="turtlebot_navigator" output="screen">
+        <param name="v_max" value="$(arg v_max)"/>
+        <param name="om_max" value="$(arg om_max)"/>
+        <param name="v_des" value="$(arg v_des)"/>
+        <param name="resolution" value="$(arg resolution)"/>
+    </node>
+
+    <node pkg="asl_turtlebot" type="goal_pub.py" name="goal_pub" output="screen" />
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find asl_turtlebot)/rviz/final_project.rviz"/>
+
+  <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure"/>
+
+
+</launch>
+
+ 
