@@ -1,12 +1,6 @@
 # AA274A_Final
 Built on top of the asl_turtlebot repository, an autonomous application for food pickup and delivery.
 
-# asl_turtlebot
-
-This contains a _starting point_ for your final project. Below are _brief_ descriptions of the code. You are strongly encouraged to take a closer look into the code for more details of how and what the code does.
-
-**File Descriptions:**
-
 **Gazebo Simulation Files:**
 ----------------------
 
